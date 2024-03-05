@@ -1,0 +1,27 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TestMail/SendMail.cs">
+    <Files>
+      <File FileName="TestMail/Main.cs" Line="1" Column="1" />
+      <File FileName="TestMail/MainWindow.cs" Line="1" Column="1" />
+      <File FileName="TestMail/EMailMessage.cs" Line="23" Column="4" />
+      <File FileName="TestMail/SendMail.cs" Line="32" Column="2" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="TestMail" expanded="True">
+            <Node name="SendMail.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
