@@ -1,4 +1,4 @@
-# Envio de e-mails vía SMTP 
+# Envio de e-mails vía SMTP con C# 
 
 <p align="justify">
 Uno de los requerimientos más comunes para las aplicaciones .NET es el envío de E-mails o correos electrónicos, entre los ejemplos mas usuales para este tipo de requerimiento se encuentran el envío automático automático de boletines electrónicos, notificaciones de eventos, bitácora del sistema, solicitudes de reunión, envío de archivos adjuntos entre otros.
@@ -29,22 +29,12 @@ Esta clase se encarga de enviar el mensaje, aquí se establecen los parámetros 
 </p>
 <div>El formulario en vista de diseño de MonoDevelop.</div><br>
 <div>
-<IMG src="picture_library/GtkSmtp/fig1.png" width="777">
-</div>
-<div>El código fuente de la clase <em>EmailMessage</em></div>
-<!--Code EmailMessage -->
-<div>
-<IMG src="picture_library/GtkSmtp/EMailMessageClass.png" border="0">
-</div>
-<br/>
-<div>El código fuente de la clase <em>Sendmail</em></div>
-<--Code Sendmail-->
-<div>
-<IMG src="picture_library/GtkSmtp/SendMail.png" border="0">
+<IMG src="images/fig1.png" width="777">
 </div>
 <p align="justify">
 Básicamente el envió de correos electrónicos consiste de dos pasos:
 Primero la creación del mensaje con sus adjuntos si es que los hubiese, de esta responsabilidad se encarga la clase <em>EMailMessage</em>, la cuál es una clase derivada de <em>MailMessage</em> y se establecen todos sus parámetros en el constructor.</p>
+<p>
 <pre>
 public EMailMessage (string subject,string fromField,List<string> to,string body,
 bool isBodyHtml)
@@ -59,7 +49,9 @@ bool isBodyHtml)
 	  Body = body;
  }
 </pre>
+</p>
 <p align="justify">Como segundo paso, el envió del mensaje mediante un servidor SMTP. La clase <em>Sendmail</em> se ocupa de esta responsabilidad solicitando los parámetros de configuración del Server.</p>
+<p>
 <pre>
 public SendMail(string server,int port,bool enableSSL){
 			 Server = server; 
@@ -73,6 +65,7 @@ public SendMail(string server,int port,bool enableSSL){
 	 Credentials = true;
  }
 </pre>
+</p>
 <p>Y después envía el mensaje con el siguiente método:</p>
 <pre>
 	public void Send(MailMessage msg){
@@ -99,22 +92,22 @@ Luego de compilar, ejecutamos y probamos la aplicación  utilizando el servidor 
 <strong>EnableSSL:</strong> true<br/>
 </p>
 <div>
-<IMG src="picture_library/GtkSmtp/fig2.png" border="0">
+<IMG src="images/fig2.png" border="0">
 </div><br>
 <p align="justify">Si el envío resulta exitoso la aplicación nos mostrará el siguiente mensaje:</p>
 <div>
-<IMG src="picture_library/GtkSmtp/fig3.png" border="0">
+<IMG src="images/fig3.png" border="0">
 </div><br>
 <p align="justify">De forma predeterminada el mensaje se envia en texto plano, para enviar el mensaje en HTML, habilitamos el checkbox para activar la propiedad <em>IsBodyHtml</em> y recibir el mensaje en este formato.</p>
 <div>
-<IMG src="picture_library/GtkSmtp/fig4.png" border="0">
+<IMG src="images/fig4.png" border="0">
 </div><br>
 <p align="justify">
 Tambien podemos utilizar un servidor local SMTP en caso de que nuestra distribución <a href="http://www.opensuse.org/en/">OpenSuse</a> tenga instalados <i>Postfix</i> o <i>Sendmail.</i></p>
 <div>
-<IMG src="picture_library/GtkSmtp/fig5.png" border="0">
+<IMG src="images/fig5.png" border="0">
 </div><br>
 <p align="justify">En el caso de no usar autentificación existe la propiedad <i>UseDefaultCredentials</i>  que funciona en el Framework .NET de Microsoft, no así en el Framework Mono, si la utilizamos, Mono lanzará una excepción como se muestra en la siguiente imagen:</p>
 <div>
-<IMG src="picture_library/GtkSmtp/fig6.png" border="0">
+<IMG src="images/fig6.png" border="0">
 </div><br>
